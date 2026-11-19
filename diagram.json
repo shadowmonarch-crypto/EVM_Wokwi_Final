@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "author": "Team 2-Bit - EVM Wokwi Demo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 80,
+      "left": 60,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -135,
+      "left": 360,
+      "attrs": {
+        "pins": "i2c",
+        "background": "blue",
+        "color": "white"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 400,
+      "left": 650,
+      "attrs": {
+        "volume": "0.5"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": -70,
+      "left": 620,
+      "attrs": {
+        "color": "green",
+        "label": "READY"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": 30,
+      "left": 620,
+      "attrs": {
+        "color": "red",
+        "label": "REJECT"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rgreen",
+      "top": -25,
+      "left": 560,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rred",
+      "top": 75,
+      "left": 560,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn0",
+      "top": 110,
+      "left": 380,
+      "attrs": {
+        "color": "green",
+        "label": "Party A"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 178,
+      "left": 380,
+      "attrs": {
+        "color": "blue",
+        "label": "Party B"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 246,
+      "left": 380,
+      "attrs": {
+        "color": "yellow",
+        "label": "Party C"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 314,
+      "left": 380,
+      "attrs": {
+        "color": "purple",
+        "label": "CONFIRM"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 382,
+      "left": 380,
+      "attrs": {
+        "color": "red",
+        "label": "TAMPER"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn5",
+      "top": 450,
+      "left": 380,
+      "attrs": {
+        "color": "gray",
+        "label": "ADMIN"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:21",
+      "lcd:SDA",
+      "green",
+      []
+    ],
+    [
+      "esp:22",
+      "lcd:SCL",
+      "blue",
+      []
+    ],
+    [
+      "esp:5V",
+      "lcd:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "lcd:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:25",
+      "btn0:1.l",
+      "green",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn0:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:26",
+      "btn1:1.l",
+      "blue",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn1:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:27",
+      "btn2:1.l",
+      "orange",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn2:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:32",
+      "btn3:1.l",
+      "purple",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn3:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:33",
+      "btn4:1.l",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn4:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:14",
+      "btn5:1.l",
+      "gray",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "btn5:2.l",
+      "black",
+      []
+    ],
+    [
+      "esp:18",
+      "rgreen:1",
+      "green",
+      []
+    ],
+    [
+      "rgreen:2",
+      "green:A",
+      "green",
+      []
+    ],
+    [
+      "green:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:19",
+      "rred:1",
+      "red",
+      []
+    ],
+    [
+      "rred:2",
+      "red:A",
+      "red",
+      []
+    ],
+    [
+      "red:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:23",
+      "buzz:2",
+      "orange",
+      []
+    ],
+    [
+      "buzz:1",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
